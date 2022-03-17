@@ -9,6 +9,19 @@ import './App.css';
 
 class App extends Component {
 
+  state = {
+
+    // Initially, no file is selected
+    selectedFile: null
+  };
+
+  onFileChange = event => {
+
+    // Update the state
+    this.setState({ selectedFile: event.target.files[0] });
+
+  };
+
   handlePermission = () => {
     navigator.permissions.query({
       name: 'geolocation'
@@ -93,6 +106,37 @@ class App extends Component {
     }
   };
 
+  fileData = () => {
+
+    if (this.state.selectedFile) {
+
+      return (
+        <div>
+          <h2>File Details:</h2>
+
+          <p>File Name: {this.state.selectedFile.name}</p>
+
+
+          <p>File Type: {this.state.selectedFile.type}</p>
+
+
+          <p>
+            Last Modified:{" "}
+            {this.state.selectedFile.lastModifiedDate.toDateString()}
+          </p>
+
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <br />
+          <h4>Choose before Pressing the Upload button</h4>
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
       <div>
@@ -102,6 +146,22 @@ class App extends Component {
         </button>
         <h2>on lat {this.state.latitude}.</h2>
         <h2>on long {this.state.longitude}.</h2>
+
+        <div>
+          <h1>
+            GeeksforGeeks
+          </h1>
+          <h3>
+            File Upload using React!
+          </h3>
+          <div>
+            <input type="file" onChange={this.onFileChange} />
+            <button onClick={this.onFileUpload}>
+              Upload!
+            </button>
+          </div>
+          {this.fileData()}
+        </div>
       </div>
 
     );
