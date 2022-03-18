@@ -5,9 +5,10 @@ import Map,{Marker} from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Pin from './Pin';
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+// import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+// mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 // Map.workerClass = require('worker-loader-mapbox-gl/dist/mapbox-gl-csp-worker').default;
-
+// mapboxgl.workerCount = MapboxWorker
 mapboxgl.accessToken = "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw"
 
 
