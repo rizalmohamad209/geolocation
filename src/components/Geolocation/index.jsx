@@ -26,24 +26,7 @@ latitude: -3.0285603291926435,
   
 
 
-   const  getLocation=()=> {
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(value => {
-        setMarker({
-          longitude: value.coords.longitude,
-          latitude: value.coords.latitude
-        });
-       
-      }, errorHandling, options);
-    } else {
-      console.log("Geo Location not supported by browser");
-    }
-  }
+   
 
   const errorHandling =(error)=> {
     if (error) {
@@ -77,7 +60,26 @@ latitude: -3.0285603291926435,
 //   );
 
   useEffect(()=>{
-    getLocation()
+   const  getLocation=()=> {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(value => {
+        setMarker({
+          longitude: value.coords.longitude,
+          latitude: value.coords.latitude
+        });
+       
+      }, errorHandling, options);
+    } else {
+      console.log("Geo Location not supported by browser");
+    }
+  }
+
+  getLocation()
   },[])
 
 
