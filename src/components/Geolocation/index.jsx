@@ -1,11 +1,12 @@
 
 import React,{useEffect,useState} from 'react'
-
+import mapboxgl from 'mapbox-gl';
 import Map,{Marker} from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-// @ts-ignore
-// eslint-disable-next-line import/no-webpack-loader-syntax
+
 import Pin from './Pin';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 // Map.workerClass = require('worker-loader-mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 
