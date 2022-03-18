@@ -3,11 +3,15 @@ import React,{useEffect,useState} from 'react'
 
 import Map,{Marker} from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import Pin from './Pin';
+// Map.workerClass = require('worker-loader-mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 
 
-let accessToken=  "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3d2cxdDA4YjczanFrYzZ5bnpqaXYifQ.S5tihIVPOa7j6QE8KPY0dw";
+
+let accessToken=  "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw";
  
 
 const Geolocation = () => {
