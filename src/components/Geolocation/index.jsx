@@ -3,16 +3,16 @@ import React,{useEffect,useState} from 'react'
 import mapboxgl from 'mapbox-gl';
 import Map,{Marker} from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-
 import Pin from './Pin';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 // Map.workerClass = require('worker-loader-mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
+mapboxgl.accessToken = "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw"
 
 
 
-let accessToken=  "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw";
+// let accessToken=  "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw";
  
 
 const Geolocation = () => {
@@ -108,7 +108,6 @@ latitude: -3.0285603291926435,
    <Map
       initialViewState={initialViewState}
       style={{width: "w-auto", height: 400}}
-      mapboxAccessToken={accessToken}
       mapStyle="mapbox://styles/mapbox/streets-v9"
     >
     
