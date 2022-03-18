@@ -98,6 +98,8 @@ latitude: -3.0285603291926435,
   
   return (
     <div className='mt-14'>
+    <h1>Latitude : {marker.latitude}</h1>
+    <h1>Laongitude : {marker.longitude}</h1>
    <Map
       initialViewState={initialViewState}
       style={{width: "w-auto", height: 400}}
