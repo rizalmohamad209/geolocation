@@ -78,7 +78,7 @@ latitude: -3.0285603291926435,
 
   useEffect(()=>{
     getLocation()
-  })
+  },[])
 
 
 //   const handleGeocoderViewportChange = React.useCallback(
